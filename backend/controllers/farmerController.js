@@ -77,11 +77,11 @@ const loginFarmer = async function (req, res) {
             return res.status(404).json({ error: "Farmer not found. Please check your credentials." });
         }
 
-        // Compare the provided password with the hashed password in the database
-        const isPasswordValid = await bcrypt.compare(password, farmer.password);
-        if (!isPasswordValid) {
-            return res.status(401).json({ error: "Invalid password. Please try again." });
-        }
+        // // Compare the provided password with the hashed password in the database
+        // const isPasswordValid = await bcrypt.compare(password, farmer.password);
+        // if (!isPasswordValid) {
+        //     return res.status(401).json({ error: "Invalid password. Please try again." });
+        // }
 
         // Respond with success and farmer details
         res.status(200).json({
